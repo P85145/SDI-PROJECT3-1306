@@ -10,19 +10,20 @@
  
 var gameName = "Sonic The Hedgehog";
 var maxPoints = 1000;
-var hasPoints = true;
-var playerNames = ["Corey", "Colin", "Noah", "SJ"];
+var highScore = true;
+var myArray = ["Corey", "SJ", "Noah"];
 var playedBefore = true;
  
 //  JSON Data
 var playerInfo = {
+	players: [
 		{
 			"name": "Corey",
 			"points": 800,
 			"playedBefore": true,
 		},
 		{
-			"name": "Colin",
+			"name": "SJ",
 			"points": 100,
 			"playedBefore": false,
 		},
@@ -30,12 +31,8 @@ var playerInfo = {
 			"name": "Noah",
 			"points": 420,
 			"playedBefore": true,
-		},
-		{
-			"name": "SJ",
-			"points": 750,
-			"playedBefore": true,
 		}
+		]
 } // end Object
 		
 
@@ -43,94 +40,108 @@ var playerInfo = {
 
 // Method Procedure
  
-var gameScores = function(firstScore, secondScore){
+var toDo = function(arg1){
 
-	var firstScore = 250;
-	var secondScore = 500;
-	var totalScore;
+	var playGame;
 	
-	totalScore = firstScore + secondScore;
-	console.log("The total score is " + totalScore);
-	
-}
-gameScores();
-if (gameScores === true);
-console.log("Great job!");
-
-	
- 
-// Boolean Function
-
-var playedBefore = function("Is this your first time playing?") {
-	var answer;
-	if(answer === true){
-	console.log("You will need to practice before you can beat Corey!")
-	}else{
-	if(answer === false)
-	console.log("Corey has some competition!")
+	if(arg1 === true) {
+	console.log("The boys want to play a game.");
+	} else {
+	console.log("The boys need to find something to do.");
 	}
-	return answer;	               
 }
+toDo(true);
+console.log("Let's play!");
 
-	//main code
-var myAnswer = mostPoints(true);
-console.log(" Yes, " + myAnswer);
  
- 
- 
- 
-// Number Function
-var maxPoints = function(extraPoints){
-	var number;
-	do
-		{
-		number = extraPoints + 100 ;
-		console.log("He just scored " + extraPoints + " extra points.");
-	
-		}
-	while (number === extraPoints)
-	
-	return number;
-
-}
-	//main code
-var myNumber = extraPoints(500);
-console.log("He has " + myNumber + " points.");
-
-               
- 
-// String Function
+// Property: String
  
 var favGame = function(newGameOne, newGameTwo){
  	
 	var string;
 
-	string = "Other games they like are " + newGameOne + ", and " + newGameTwo + "."
+	string = "other games they like are " + newGameOne + " and " + newGameTwo + "."
 
 	return string;
 }
 	// main code
 var myString = favGame("Kirby", "Mario Kart");
-console.log("The boys like to play Nintendo DS games. " + myString);
+console.log("The boys like to play Nintendo DS games. " + gameName +  " is their favorite, but " + myString);
  
- 
- 
- 
-// Array Function
- 
-var myArray = ["Corey", "Colin", "Noah", "SJ"];
+  
 
-console.log("The array length is " + myArray.lenghth);
+// Property: Array
+var myArray = ["Corey", "SJ", "Noah"];
 
-for (var i=0; i < myArray.length; i++) {
+console.log("The array length is " + myArray.length);
+
+	for (var i = 0; i < myArray.length; i++) {
 	
-	console.log(myArray[i] + " is playing the game."); 
-
-	
- return myArray;
+		console.log(myArray[i] + " wants to play the game."); 
+		
+		if (i < myArray.length) {
+			console.log("Yay!");
+		} else {
+			console.log("Let's invite them to play!");
+		}
+ 
 };
 
 	//main code
 myArray.pop();
-console.log(myArray);
+console.log("They will do rock, paper, scissors, to see which two will play first!");
+console.log("And the players are: " + myArray);
 
+ 
+ 
+// Property: Number
+var maxPoints = function(extraPoints){
+console.log("They will play two games!");
+	while (extraPoints > 0) {
+	
+		console.log("Player 1 has " + extraPoints + ".");
+		
+		extraPoints = extraPoints + 100; 
+		console.log("Player 2 has " + extraPoints + ".");
+		
+		if (extraPoints > 0) {
+			console.log("Way to go!");
+		} else { 
+			console.log("Better luck next time!");
+		}
+		
+		if (extraPoints === 1000) {
+			return extraPoints;
+		}
+		
+	}
+	return extraPoints;
+	
+}	
+	//main code
+var myNumber = maxPoints(800);
+console.log("Corey has " + myNumber + " extra points.");
+
+               
+// Property: Boolean
+
+var highScore = function(arg1, arg2) {
+	var  booReturn = (highScore === true);
+	if(arg1 < arg2){
+	console.log("SJ will need to practice before he can beat Corey!")
+	booReturn = true;
+	}else{
+	console.log("Corey has some competition!")
+	booReturn = false;
+	}
+	
+	return booReturn;	               
+}
+
+	//main code
+console.log(" Yes, this is " + highScore(800,1000));
+
+  
+
+ 
+ 
